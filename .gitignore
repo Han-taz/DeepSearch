@@ -169,4 +169,6 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
-./cursor
+.cursor
+.vscode
+.DS_Store
