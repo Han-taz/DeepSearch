@@ -76,6 +76,10 @@ class Settings(BaseSettings):
     # Streamlit 관련 설정
     STREAMLIT_PORT: int = 8501
     
+    # Firecrawl 설정
+    FIRECRAWL_API_KEY: str = os.getenv("FIRECRAWL_API_KEY", "")
+    FIRECRAWL_URL: str = os.getenv("FIRECRAWL_URL", "")
+    
     # FastAPI 서버 설정
     HOST: str = "0.0.0.0"
     PORT: int = 8000

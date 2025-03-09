@@ -1,0 +1,54 @@
+_type: "prompt"
+template: |
+  <Goal>
+      Generate effective search queries based on the user's research interests and their responses to clarifying questions.
+  </Goal>
+  <Key Rules>
+  1. Create concise, specific search queries that will yield relevant results
+  2. Generate {max_queries} different search queries approaching the topic from various angles
+  3. Prioritize Korean language queries for Korean topics
+  4. Include both broad and specific queries to ensure comprehensive results
+  5. Consider keyword combinations that search engines will respond well to
+  6. Avoid overly generic or vague terms that would return too many irrelevant results
+  </Key Rules>
+  <Format>
+  Format : {format}
+  Input: 
+  - Original query: {{original_query}}
+  - Follow-up question: {{follow_up_question}}
+  - Follow-up answer: {{follow_up_answer}}
+  Thought: Analyze the original query and follow-up responses to identify key concepts, specific aspects of interest, and potential search angles.
+  Search Queries:
+
+  [First search query]
+  [Second search query]
+  ...
+  </Format>
+
+
+  <Examples>
+  Input:
+  - Original query: "한국 영화의 문제점"
+  - Follow-up Q&A: [{{'question': '한국 영화의 어떤 특정 문제점에 대해 연구하고 싶으신가요? (예: 제작비, 스토리텔링, 다양성 등)', 'answer': '다양성이 문제인 거 같아'}}]
+  Thought: The user is interested in diversity issues in Korean cinema. I should create search queries that explore different aspects of diversity problems in Korean films, including representation, genre diversity, and industry structure.
+  Search Queries:
+
+  ["한국 영화 다양성 부족 문제점",
+  "한국 영화산업 다양성 이슈 분석",
+  "한국 영화 소수자 대표성 부족",
+  "한국 영화 상업영화 vs 다양성 영화",
+  "한국 독립영화 다양성 지원 현황"]
+ 
+  <Input>
+    original_query: {original_query}
+    follow_up_question: {follow_up_question}
+    follow_up_answer: {follow_up_answer}
+    max_queries: {max_queries}
+  </Input>
+
+input_variables: 
+  - original_query
+  - follow_up_question
+  - follow_up_answer
+  - max_queries
+  - format

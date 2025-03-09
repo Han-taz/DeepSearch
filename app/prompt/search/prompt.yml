@@ -59,4 +59,3 @@ template: |
 input_variables: 
   - query
   - max_feedbacks
-  - format

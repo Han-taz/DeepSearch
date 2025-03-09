@@ -172,3 +172,5 @@ cython_debug/
 .cursor
 .vscode
 .DS_Store.vscode
+tests/jupyter/*
+*.ipynb

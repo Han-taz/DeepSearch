@@ -16,6 +16,8 @@ def load_prompt_from_yaml(prompt: str, encoding: str = "utf-8") -> PromptTemplat
     # prompt_path 설정
     if prompt == "feedback":
         prompt_path = project_root / "app" / "prompt" / "feedback" / "prompt.yml"
+    elif prompt == "create_search_query":
+        prompt_path = project_root / "app" / "prompt" / "feedback" / "create_question.yml"
  
     else:
         raise ValueError(f"Invalid prompt: {prompt}")  
