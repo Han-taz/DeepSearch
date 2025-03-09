@@ -1,20 +1,26 @@
-[project]
+[tool.poetry]
 name = "deepsearch"
 version = "0.1.0"
-description = ""
-authors = [
-    {name = "Kevin",email = "ftkevin12@gmail.com"}
-]
+description = "DeepSearch 프로젝트"
+authors = ["Kevin <ftkevin12@gmail.com>"]
 readme = "README.md"
-requires-python = ">=3.11"
-dependencies = [
+packages = [
+    { include = "app" }
 ]
 
-
-[build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"  
+langgraph = "^0.3.5"
+langchain = "^0.3.20"
+langchain-core = "^0.3.43"
+langchain-openai = "^0.3.8"
+firecrawl = "^1.13.5"
+pydantic = "^2.10.6"
+typing-extensions = "^4.12.2"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"
 
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
